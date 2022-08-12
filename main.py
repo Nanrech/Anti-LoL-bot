@@ -97,7 +97,7 @@ async def mode(ctx: ipy.CommandContext, setting: str):
 @client.event
 async def on_raw_presence_update(payload: ipy.Presence):
     for activity in payload.activities:
-        if "Visual" in activity.name:
+        if "league of legends" in activity.name.lower():
             with open("mode.json", "r") as f:
                 modejson = load(f)
             if modejson.get(str(payload.guild_id)) == "alert" or not modejson.get(str(payload.guild_id)):
